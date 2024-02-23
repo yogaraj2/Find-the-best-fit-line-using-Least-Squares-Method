@@ -23,48 +23,36 @@ RegisterNumber:  212223040248
 */
 ```
 import numpy as np
-
 import matplotlib.pyplot as plt
 
-X=np.array(eval(input
+X = np.array(eval(input()))
+Y = np.array(eval(input()))
 
-Y=np.array(eval(input()))
-
-
-X_mean=np.mean(X)
-
-print(X_mean)
-
+# Mean
+X_mean =np.mean(X)
 Y_mean=np.mean(Y)
+num=0  #for slope
+denom=0  #for slope
 
-print(Y_mean)
-
-num=0
-
-denum=0
-
+#to find sum of (xi-x') & (yi-y') & (xi-x')^2
 for i in range(len(X)):
+    num+=(X[i] -X_mean)*(Y[i]-Y_mean)
+    denom+= (X[i]-X_mean)**2
 
-  num+=(X[i]-X_mean)*(Y[i]-Y_mean)
-  
-  denum+=(X[i]-X_mean)**2
-  
-m=num/denum
+#calculate slope
+m=num/denom
 
-print(m)
+#calculate intercept
+b=Y_mean-m*X_mean
 
-b=Y_mean - m*X_mean
+print(m,b)
+#Line equation
+y_predicted=m*X+b
+print(y_predicted)
 
-print(b)
-
-Y_pred=m*X+b
-
-print(Y_pred)
-
-plt.scatter(X,Y,color='blue')
-
-plt.plot(X,Y_pred,color='yellow') 
-
+#to plot graph
+plt.scatter(X,Y)
+plt.plot(X,y_predicted,color='green')
 plt.show()
 
 ## Output:

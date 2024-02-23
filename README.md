@@ -42,9 +42,9 @@ denom=0
 
 for i in range(len(X)):
 
-    num+=(X[i] -X_mean)*(Y[i]-Y_mean)
+num+=(X[i] -X_mean)*(Y[i]-Y_mean)
     
-    denom+= (X[i]-X_mean)**2
+denom+= (X[i]-X_mean)**2
 
 
 m=num/denom

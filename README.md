@@ -52,7 +52,9 @@ print(y_predicted)
 
 
 plt.scatter(X,Y)
+
 plt.plot(X,y_predicted,color='green')
+
 plt.show()
 
 ## Output:
